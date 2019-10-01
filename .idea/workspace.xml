@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e96271f-8817-444f-8b16-fb0b194ffc23" name="Default Changelist" comment="" />
+    <list default="true" id="4e96271f-8817-444f-8b16-fb0b194ffc23" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelos/Aluno_normal" beforeDir="false" afterPath="$PROJECT_DIR$/Modelos/Aluno_normal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelos/Aluno_presidente" beforeDir="false" afterPath="$PROJECT_DIR$/Modelos/Aluno_presidente" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelos/Enum_tipoAluno" beforeDir="false" afterPath="$PROJECT_DIR$/Modelos/Enum_tipoAluno" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelos/Pessoa" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +23,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -52,7 +59,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
