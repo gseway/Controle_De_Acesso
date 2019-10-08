@@ -1,3 +1,3 @@
-Class Controlador_Principal
+class Controlador_Principal:
 
-    __init__()
+    def __init__(self):
