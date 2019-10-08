@@ -1,26 +1,22 @@
-from Pesssoa import Pessoa
-import Enum_tipoAluno
+from pessoa import Pessoa
+from Enum_tipoAluno import TipoAluno
 
-Class Aluno_presidente(Pessoa):
+class Aluno_presidente(Pessoa):
 
-    __init__(self, nome: str, matricula: int, tipo_aluno: tipo_aluno, cpf: int, email: str):
-        super()__init__(nome, matricula, tipo_pessoa)
-        self.__cpf = cpf
-        self.__email = email
-        
-    @property 
-    def get_cpf(self):
-        return self.__cpf
+  def  __init__(self, nome: str, matricula: int, tipo_aluno: TipoAluno, cpf: int, email: str):
+    super().__init__(nome, matricula, tipo_aluno)
+    self.__cpf = cpf
+    self.__email = email
+
+  def get_cpf(self):
+    return self.__cpf
+
+  def get_email(self):
+    return self.__email
+
+  def set_cpf(self, cpf):
+    self.__cpf = cpf
     
-    @property 
-    def get_email(self):
-        return self.__email
-
-    @cpf.setter
-    def set_cpf(self, cpf):
-        self.__cpf = cpf
-    
-    @email.setter
-    def set_matricula(self, email):
-        self.__email = email
+  def set_email(self, email):
+    self.__email = email
        

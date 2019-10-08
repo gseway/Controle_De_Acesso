@@ -1,9 +1,9 @@
-from Pesssoa import Pessoa
-import Enum_tipoAluno
+from Pessoa import Pessoa
+from Enum_tipoAluno import TipoAluno
 
-Class Aluno_normal(Pessoa):
+class Aluno_normal(Pessoa):
 
-    __init__(self, nome: str, matricula: int, tipo_aluno: tipo_aluno):
-        super()__init__(nome, matricula, tipo_pessoa)
+  def  __init__(self, nome: str, matricula: int, tipo_aluno: TipoAluno):
+        super().__init__(nome, matricula, tipo_aluno)
 
         
