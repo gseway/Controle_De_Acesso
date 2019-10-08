@@ -1,9 +1,9 @@
-from pessoa import Pessoa
-from Enum_tipoAluno import TipoAluno
+from Modelos import pessoa
+from Enum import enum_tipoAluno
 
-class Aluno_presidente(Pessoa):
+class AlunoPresidente(pessoa):
 
-  def  __init__(self, nome: str, matricula: int, tipo_aluno: TipoAluno, cpf: int, email: str):
+  def  __init__(self, nome: str, matricula: int, tipo_aluno: enum_tipoAluno, cpf: int, email: str):
     super().__init__(nome, matricula, tipo_aluno)
     self.__cpf = cpf
     self.__email = email
@@ -19,4 +19,3 @@ class Aluno_presidente(Pessoa):
     
   def set_email(self, email):
     self.__email = email
-       

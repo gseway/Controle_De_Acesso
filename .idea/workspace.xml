@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e96271f-8817-444f-8b16-fb0b194ffc23" name="Default Changelist" comment="" />
+    <list default="true" id="4e96271f-8817-444f-8b16-fb0b194ffc23" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Controladores/ctrl_alunoPresidente.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Controle_De_Acesso.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Controle_De_Acesso.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controladores/Ctrl_Principal" beforeDir="false" afterPath="$PROJECT_DIR$/Controladores/ctrl_Principal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controladores/Ctrl_aluno" beforeDir="false" afterPath="$PROJECT_DIR$/Controladores/ctrl_aluno.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controladores/Ctrl_alunoPresidente" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelos/Enum_tipoAluno.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enum/enum_tipoAluno.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelos/aluno_presidente.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modelos/aluno_presidente.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelos/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/main.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
