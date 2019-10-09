@@ -1,4 +1,4 @@
-class Ctrl_principal:
+class Ctrl_Principal:
 
     def __init__(self):
         pass

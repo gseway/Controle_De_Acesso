@@ -1,8 +1,8 @@
 from Modelos import Aluno_presidente
 
-class CtrlAlunoPessoa:
+class Ctrl_alunoPresidente:
 
-  def __init__(self, presidente: aluno_presidente):
+  def __init__(self, presidente: Aluno_presidente):
     self.__presidente = presidente 
     self.__presidentes = []
 
@@ -12,7 +12,7 @@ class CtrlAlunoPessoa:
   def set_presidente(self, presidente):
     self.__presidente = presidente
   
-  def inclui_presidente(self, novo_presidente: aluno_presidente):
+  def inclui_presidente(self, novo_presidente: Aluno_presidente):
     #percorre a lista de presidentes para verificar se o novo já é existente, comparando matricula e cpf
     for presidente in self.__presidentes:
       if (presidente.cpf == novo_presidente.cpf):
