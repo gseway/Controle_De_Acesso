@@ -1,4 +1,4 @@
-from Modelos import aluno_presidente
+from Modelos import Aluno_presidente
 
 class CtrlAlunoPessoa:
 
