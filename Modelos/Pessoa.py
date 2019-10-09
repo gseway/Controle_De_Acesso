@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
-from enum_tipoAluno import TipoAluno
+from Enum import enum_tipoAluno
 
 class Pessoa(ABC):
     
     @abstractmethod
-    def __init__(self, nome: str, matricula: int, tipo_aluno: TipoAluno):
+    def __init__(self, nome: str, matricula: int, tipo_aluno: enum_tipoAluno):
         self.__nome = nome
         self.__matricula = matricula
         self.__tipo_aluno = tipo_aluno
