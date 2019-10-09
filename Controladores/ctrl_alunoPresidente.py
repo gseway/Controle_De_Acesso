@@ -27,10 +27,19 @@ class Ctrl_alunoPresidente:
     for presidente in self.__presidentes:
       print(f"Nome: {presidente.nome} Matricula: {presidente.matricula} CPF: {presidente.cpf} email: {presidente.email}")
 
-  def atualiza_presidente(self):
-    pass
-  def exclui_presidente(self):
-    pass
+  def atualiza_presidente(self, presidente: AlunoPresidente):
+    for i in self.__presidentes:
+      if i.cpf == presidente.cpf:
+        index = self.__presidentes.index(i)
+        break
+    self.__presidentes.insert(index, presidente)
+
+  def exclui_presidente(self, matricula: int):
+    #criar função para verificar matricula
+    for aluno in self.__presidentes:
+      if aluno.matricula == matricula:
+        self.__presidentes.remove(aluno)
+
   def finalizar(self):
     exit(0)
 
