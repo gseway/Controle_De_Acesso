@@ -1,5 +1,6 @@
 from Modelos.aluno_presidente import AlunoPresidente
 
+
 class CtrlAlunoPessoa:
 
   def __init__(self, presidente: AlunoPresidente):
