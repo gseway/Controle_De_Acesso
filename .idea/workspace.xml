@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e96271f-8817-444f-8b16-fb0b194ffc23" name="Default Changelist" comment="">
-<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/Controladores/ctrl_alunoPresidente.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Controle_De_Acesso.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Controle_De_Acesso.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -13,14 +12,6 @@
       <change beforePath="$PROJECT_DIR$/Modelos/Enum_tipoAluno.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enum/enum_tipoAluno.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modelos/aluno_presidente.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modelos/aluno_presidente.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modelos/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/main.py" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controladores/Ctrl_Principal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modelos/Aluno_normal.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modelos/Aluno_normal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modelos/Aluno_presidente.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modelos/Aluno_presidente.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modelos/Pessoa.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modelos/Pessoa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Telas/Tela_presidente" beforeDir="false" />
->>>>>>> a20a65391dc59f5b3862bec4a06d3e781a40d5e3
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,9 +28,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -64,7 +53,6 @@
       <option name="presentableId" value="Default" />
       <updated>1569886038408</updated>
       <workItem from="1569886039643" duration="620000" />
-      <workItem from="1570554178785" duration="190000" />
     </task>
     <servers />
   </component>
