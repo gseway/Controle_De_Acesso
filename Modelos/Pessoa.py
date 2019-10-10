@@ -5,8 +5,9 @@ from Enum import enum_tipoAluno
 from enum_tipoAluno import Tipo_aluno
 >>>>>>> 2fba35e167035f6316e76e5fda6ab1e2bb7afea8
 
+
 class Pessoa(ABC):
-    
+
     @abstractmethod
 <<<<<<< HEAD
     def __init__(self, nome: str, matricula: int, tipo_aluno: enum_tipoAluno):

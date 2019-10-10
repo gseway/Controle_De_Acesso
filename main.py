@@ -1,10 +1,12 @@
-from Modelos.aluno_presidente import AlunoPresidente
-from Controladores.Ctrl_alunoPresidente import CtrlAlunoPessoa
-from Enum.enum_tipoAluno import TipoAluno
+from Modelos import Aluno_presidente
+from Controladores import ctrl_alunoPresidente
+from Enum.enum_tipoAluno import tipo_Aluno
+from Modelos import Pessoa
+
 
 def main():
-    presida = AlunoPresidente("noemee", 17202184, TipoAluno.ALUNO_PRESIDENTE, 11269734911, "email@com.")
-    controlador = CtrlAlunoPessoa().inclui_presidente(presida())
+    presida = Pessoa.Aluno_presidente("noemee", 17202184, tipo_Aluno.ALUNO_PRESIDENTE, 11269734911, "email@com.")
+    ctrl_alunoPresidente().inclui_presidente(presida())
 
 
 if __name__ == '__main__':
