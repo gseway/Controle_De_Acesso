@@ -2,6 +2,8 @@ from Controladores.ctrl_alunoPresidente import Ctrl_alunoPresidente
 from Controladores.ctrl_de_dados import CtrlDeDados
 from Modelos.Aluno_presidente import AlunoPresidente
 from Enum.enum_tipoAluno import tipo_Aluno
+from Telas import Tela_aluno
+
 
 class Tela_presidente:
     def __init__(self):
@@ -14,17 +16,18 @@ class Tela_presidente:
         print("2 - Listar Presidentes      |")
         print("3 - Atualizar um Presidente |")
         print("4 - Excluir um Presidente   |")
+        print("5 - Gerenciar alunos        |")
         switcher = {
             0: self.tela_finaliza,
             1: self.tela_inclui_presidente,
             2: self.tela_lista_presidente,
             3: self.tela_atualiza_presidente,
-            4: self.tela_exclui_presidente}
+            4: self.tela_exclui_presidente,
+            5: self.tela_aluno}
         while True:
             opcao = int(input("Digite a opção desejada: "))
             opcao_escolhida = switcher[opcao]
             opcao_escolhida()
-
 
     def tela_inclui_presidente(self):
         print("Digite os dados do novo presidente:")
@@ -67,3 +70,6 @@ class Tela_presidente:
 
     def tela_finaliza(self):
         self.__crtl_presidente.finalizar()
+
+    def tela_aluno(self):
+        Tela_aluno.tela_aluno.menu_aluno()

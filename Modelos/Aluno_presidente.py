@@ -4,7 +4,7 @@ from Enum import enum_tipoAluno
 
 class AlunoPresidente(Pessoa):
 
-    def __init__(self, nome: str, matricula: str, tipo_aluno: enum_tipoAluno, cpf: str, email: str):
+    def __init__(self, nome: str, matricula: int, tipo_aluno: enum_tipoAluno, cpf: str, email: str):
         super().__init__(nome, matricula, tipo_aluno)
         self.__cpf = cpf
         self.__email = email

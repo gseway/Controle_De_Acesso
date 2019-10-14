@@ -1,6 +1,7 @@
 import sys
-# from Modelos import Aluno_presidente
 from Modelos.Aluno_presidente import AlunoPresidente
+from Telas import Tela_presidente
+
 
 class Ctrl_alunoPresidente:
 
@@ -10,7 +11,8 @@ class Ctrl_alunoPresidente:
     def inclui_presidente(self, novo_presidente: AlunoPresidente):
         # percorre a lista de presidentes para verificar se o novo já é existente, comparando matricula e cpf
         if len(self.__presidentes) == 5:
-            print("Não é possível inserir mais um presidente pois todas as vagas já estão preenchidas. Exclua algum existente")
+            print(
+                "Não é possível inserir mais um presidente pois todas as vagas já estão preenchidas. Exclua algum existente")
             return
         for presidente in self.__presidentes:
             if presidente.get_cpf() == novo_presidente.get_cpf():
@@ -25,7 +27,8 @@ class Ctrl_alunoPresidente:
             print("Não há nenhum presidente cadastrado.")
         for presidente in self.__presidentes:
             index += 1
-            print(f"{index}-Nome: {presidente.get_nome()}    Matricula: {presidente.get_matricula()}    CPF: {presidente.get_cpf()}    email: {presidente.get_email()}")
+            print(
+                f"{index}-Nome: {presidente.get_nome()}    Matricula: {presidente.get_matricula()}    CPF: {presidente.get_cpf()}    email: {presidente.get_email()}")
 
     def atualiza_presidente(self, presidente: AlunoPresidente):
         for index in self.__presidentes:
@@ -47,3 +50,9 @@ class Ctrl_alunoPresidente:
 
     def finalizar(self):
         sys.exit(0)
+
+    def getPresidentes(self):
+        return self.__presidentes
+
+    def tela_presidente(self):
+        Tela_presidente.Tela_presidente.menu_principal()
