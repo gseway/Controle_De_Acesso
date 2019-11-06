@@ -65,7 +65,7 @@ class CtrlAlunoPresidente:
                     infile.write(line)
 
     def presidente_por_cpf(self, cpf):
-        # abri no modo "r" de read, que vai puxar todas a linhas do arquivo
+          # abri no modo "r" de read, que vai puxar todas a linhas do arquivo
         with open("presidentes.txt", "r") as infile:
             lines = infile.readlines()
             infile.seek(0)
