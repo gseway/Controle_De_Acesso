@@ -1,12 +1,19 @@
 import sys
 from Entidades.aluno_normal import Aluno_normal
 from Enum.enum_tipoAluno import TipoAluno
-
+from Novas_Telas.tela_aluno import TelaAluno
 
 class Ctrl_aluno:
+    __instance = None
+
     def __init__(self):
         aluno = Aluno_normal("Douglas", "17202185", TipoAluno.ALUNO_PRESIDENTE, "11269734913", "12345")
         self.__alunos = [aluno]
+
+    def __new__(cls):
+        if Ctrl_aluno.__instance is None:
+            Ctrl_aluno.__instance = object.__new__(cls)
+            return Ctrl_aluno.__instance
 
     def inclui_aluno(self, novo_aluno: Aluno_normal):
         for aluno in self.__alunos:
@@ -21,7 +28,7 @@ class Ctrl_aluno:
     def lista_alunos(self):
         if not self.__alunos:
             print("Não há nenhum aluno cadastrado.")
-        #for index, __alunos in enumerate(self.__alunos):
+        # for index, __alunos in enumerate(self.__alunos):
         #    print(
         #        f"{index}-Nome: {__alunos.nome}    Matricula: {__alunos.matricula}    CPF {__alunos.cpf}")
         with open("alunos.txt", "r") as infile:
@@ -55,5 +62,4 @@ class Ctrl_aluno:
         return self.__alunos
 
     def tela_aluno(self):
-        from Telas.tela_aluno import TelaAluno
-        TelaAluno.menu_aluno()
+        TelaAluno.layout_aluno()

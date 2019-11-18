@@ -1,24 +1,31 @@
 import sys
 from Entidades.aluno_presidente import AlunoPresidente
-from Telas.tela_presidente import TelaPresidente
+from Novas_Telas.tela_presidente import TelaPresidente
 from Enum.enum_tipoAluno import TipoAluno
 from datetime import date
 from Entidades.relatorio_acesso import RelatorioAcesso
 
 
 class CtrlAlunoPresidente:
+    __instance = None
 
     def __init__(self):
+        self.__tela_presidente = TelaPresidente
         presidente_admin = AlunoPresidente("Douglas", "17202184", TipoAluno.ALUNO_PRESIDENTE, "11269734911",
                                            "douglasazambuja@hotmail.com", "12345")
         self.__presidentes = [presidente_admin]
         self.__relatorios = []
 
+    def __new__(cls):
+        if CtrlAlunoPresidente.__instance is None:
+            CtrlAlunoPresidente.__instance = object.__new__(cls)
+        return CtrlAlunoPresidente.__instance
+
     def inclui_presidente(self, novo_presidente: AlunoPresidente):
         # percorre a lista de presidentes para verificar se o novo já é existente, comparando o cpf
         if len(self.__presidentes) == 5:
-            print(
-                "Não é possível inserir mais um presidente pois todas as vagas já estão preenchidas. Exclua algum existente")
+            print("Não é possível inserir mais um presidente pois todas as vagas já estão preenchidas. Exclua algum "
+                  "existente")
             return
 
         for presidente in self.__presidentes:
@@ -46,7 +53,6 @@ class CtrlAlunoPresidente:
         with open("presidentes.txt", "r") as infile:
             lines = infile.readlines()
 
-
         cpfs = [pres.cpf for pres in self.__presidentes]
         if presidente_att.cpf not in cpfs:
             print("Presidente não consta na lista.")
@@ -65,7 +71,7 @@ class CtrlAlunoPresidente:
                     infile.write(line)
 
     def presidente_por_cpf(self, cpf):
-          # abri no modo "r" de read, que vai puxar todas a linhas do arquivo
+        # abri no modo "r" de read, que vai puxar todas a linhas do arquivo
         with open("presidentes.txt", "r") as infile:
             lines = infile.readlines()
             infile.seek(0)
@@ -98,5 +104,5 @@ class CtrlAlunoPresidente:
     def relatorios(self):
         return self.__relatorios
 
-    def tela_presidente(self):
-        TelaPresidente.menu_principal()
+    def abre_menu(self):
+        TelaPresidente.layout_menu()

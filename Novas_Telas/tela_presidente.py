@@ -1,14 +1,18 @@
 import PySimpleGUI as sg
+from Controladores import ctrl_alunoPresidente
 
 
 class TelaPresidente:
-    layout_aluno = [
+    layout_menu = [
         [sg.Text("Menu Presidente")],
-        [sg.ReadButton("Criar"), sg.ReadButton("Listar")],
-        [sg.ReadButton("Editar"), sg.ReadButton("Excluir")],
-        [sg.Text("    "), sg.ReadButton("Voltar")]
+        [sg.ReadButton('Alunos'), sg.ReadButton('Presidente'), sg.ReadButton('Entrar')],
+        sg.ReadButton('Sair')
     ]
-
-    window = sg.Window("Gerenciar Aluno", default_button_element_size=(6, 1),
-                       auto_size_buttons=False, grab_anywhere=False).Layout(layout_aluno)
+    layout_presidente = [
+        [sg.Text("Menu Presidente")],
+        [sg.ReadButton("Cadastrar Presidente"), sg.ReadButton("Listar Presidentes")],
+        [sg.ReadButton("Excluir Presidente"), sg.ReadButton("Editar Presidente")],
+    ]
+    window = sg.Window("Gerenciar presidente", default_button_element_size=(15, 1),
+                       auto_size_buttons=False, grab_anywhere=False).Layout(layout_presidente)
     button, values = window.Read()

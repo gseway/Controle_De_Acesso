@@ -1,18 +1,21 @@
-from Telas.tela_presidente import TelaPresidente
 from Controladores.ctrl_alunoPresidente import CtrlAlunoPresidente
 from Controladores.ctrl_aluno import Ctrl_aluno
-from Telas.tela_aluno import TelaAluno
-from datetime import date
+from Novas_Telas.tela_principal import TelaPrincipal
 from Entidades.relatorio_acesso import RelatorioAcesso
 
 
 class CtrlPrincipal:
+    __instance = None
 
     def __init__(self):
+        self.__tela_principal = TelaPrincipal
         self.__ctrl_presidente = CtrlAlunoPresidente()
         self.__ctrl_aluno = Ctrl_aluno()
-        self.__tela_presidente = TelaPresidente()
-        self.__tela_aluno = TelaAluno()
+
+    def __new__(cls):
+        if CtrlPrincipal.__instance is None:
+            CtrlPrincipal.__instance = object.__new__(cls)
+        return CtrlPrincipal.__instance
 
     def login(self, matricula: str, senha: str):
         with open("presidentes.txt", "r") as infile:
@@ -21,7 +24,7 @@ class CtrlPrincipal:
                 if matricula and senha in line:
                     #relatorio = RelatorioAcesso(pres.nome, pres.cpf, date.today())
                     #self.__ctrl_presidente.add_relatorio_acesso(relatorio)
-                    self.__tela_presidente.menu_principal()
+                    self.__ctrl_presidente.abre_menu()
 
         #for pres in self.__ctrl_presidente.presidentes:
         #    if pres.matricula == matricula and pres.senha == senha:
@@ -33,5 +36,5 @@ class CtrlPrincipal:
             if aluno.matricula == matricula and aluno.senha == senha:
                 relatorio = RelatorioAcesso(aluno.nome, aluno.cpf, aluno.today())
                 self.__ctrl_presidente.add_relatorio_acesso(relatorio)
-                self.__tela_aluno.menu_aluno()
+                self.__tela_aluno.layout_aluno()
         return

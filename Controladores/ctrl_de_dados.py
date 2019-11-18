@@ -1,9 +1,16 @@
 from random import randrange
 
+
 class CtrlDeDados:
+    __instance = None
 
     def __init__(self):
         pass
+
+    def __new__(cls):
+        if CtrlDeDados.__instance is None:
+            CtrlDeDados.__instance = object.__new__(cls)
+        return CtrlDeDados.__instance
 
     def verifica_matricula(self, matricula: str):
         if not matricula or len(matricula) < 8 or len(matricula) > 8:
@@ -29,4 +36,3 @@ class CtrlDeDados:
             i = str(randrange(0, 10))
             senha += i
         return senha
-
