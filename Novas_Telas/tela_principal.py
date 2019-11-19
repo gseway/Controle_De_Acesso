@@ -7,7 +7,7 @@ class TelaPrincipal:
     login_principal = [
         [sg.Text("Controle de Acesso ao CASIN")],
         [sg.InputText("Matricula", size=(15, 1), do_not_clear=True, justification='left', key='matricula')],
-        [sg.InputText("Senha", size=(15, 1), do_not_clear=True, justification='left',key='senha')],
+        [sg.InputText("Senha", size=(15, 1), do_not_clear=True, justification='left', key='senha')],
         [sg.ReadButton('1'), sg.ReadButton('2'), sg.ReadButton('3')],
         [sg.ReadButton('4'), sg.ReadButton('5'), sg.ReadButton('6')],
         [sg.ReadButton('7'), sg.ReadButton('8'), sg.ReadButton('9')],
@@ -36,4 +36,5 @@ class TelaPrincipal:
             botoes_matricula += button
         elif button == 'Entrar':
             botoes_matricula = values['matricula']
-            # valor da matricula para o controlador
+            ctrl_principal.CtrlPrincipal.login(botoes_matricula)
+

@@ -7,6 +7,7 @@ class TelaPresidente:
         [sg.Text("Menu Presidente")],
         [sg.ReadButton('Alunos'), sg.ReadButton('Presidente'), sg.ReadButton('Entrar')],
         sg.ReadButton('Sair')
+
     ]
     layout_presidente = [
         [sg.Text("Menu Presidente")],

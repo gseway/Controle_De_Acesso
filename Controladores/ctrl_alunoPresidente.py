@@ -26,6 +26,8 @@ class CtrlAlunoPresidente:
         if len(self.__presidentes) == 5:
             print("Não é possível inserir mais um presidente pois todas as vagas já estão preenchidas. Exclua algum "
                   "existente")
+
+
             return
 
         for presidente in self.__presidentes:
@@ -54,6 +56,7 @@ class CtrlAlunoPresidente:
             lines = infile.readlines()
 
         cpfs = [pres.cpf for pres in self.__presidentes]
+
         if presidente_att.cpf not in cpfs:
             print("Presidente não consta na lista.")
             return
