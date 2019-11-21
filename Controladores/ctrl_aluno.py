@@ -2,13 +2,17 @@ import sys
 from Entidades.aluno_normal import Aluno_normal
 from Enum.enum_tipoAluno import TipoAluno
 from Novas_Telas.tela_aluno import TelaAluno
+from Controladores.ctrl_alunoPresidente import CtrlAlunoPresidente
+
 
 class Ctrl_aluno:
     __instance = None
+    ctrlPresidente = CtrlAlunoPresidente()
 
     def __init__(self):
         aluno = Aluno_normal("Douglas", "17202185", TipoAluno.ALUNO_PRESIDENTE, "11269734913", "12345")
         self.__alunos = [aluno]
+
 
     def __new__(cls):
         if Ctrl_aluno.__instance is None:
@@ -63,3 +67,6 @@ class Ctrl_aluno:
 
     def tela_aluno(self):
         TelaAluno.layout_aluno()
+
+    def tela_presidente(self):
+        CtrlAlunoPresidente.abre_menu()

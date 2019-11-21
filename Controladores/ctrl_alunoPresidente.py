@@ -58,10 +58,6 @@ class CtrlAlunoPresidente:
 
         except IndexError:
             print("Não há nenhum presidente com essa matrícula")
-        except
-
-
-
 
         with open("presidentes.txt", "r") as infile:
             lines = infile.readlines()

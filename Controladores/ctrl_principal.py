@@ -22,11 +22,11 @@ class CtrlPrincipal:
             lines = infile.readlines()
             for line in lines:
                 if matricula and senha in line:
-                    #relatorio = RelatorioAcesso(pres.nome, pres.cpf, date.today())
-                    #self.__ctrl_presidente.add_relatorio_acesso(relatorio)
+                    # relatorio = RelatorioAcesso(pres.nome, pres.cpf, date.today())
+                    # self.__ctrl_presidente.add_relatorio_acesso(relatorio)
                     self.__ctrl_presidente.abre_menu()
 
-        #for pres in self.__ctrl_presidente.presidentes:
+        # for pres in self.__ctrl_presidente.presidentes:
         #    if pres.matricula == matricula and pres.senha == senha:
         #        relatorio = RelatorioAcesso(pres.nome, pres.cpf, date.today())
         #        self.__ctrl_presidente.add_relatorio_acesso(relatorio)
@@ -38,3 +38,6 @@ class CtrlPrincipal:
                 self.__ctrl_presidente.add_relatorio_acesso(relatorio)
                 self.__tela_aluno.layout_aluno()
         return
+
+    def abreTela(self):
+        TelaPrincipal.entrar()

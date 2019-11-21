@@ -1,40 +1,26 @@
 import PySimpleGUI as sg
 from Controladores import ctrl_principal
+from Controladores.ctrl_principal import CtrlPrincipal
 
 
 class TelaPrincipal:
+    ctrl_presidente = CtrlPrincipal()
 
-    login_principal = [
-        [sg.Text("Controle de Acesso ao CASIN")],
-        [sg.InputText("Matricula", size=(15, 1), do_not_clear=True, justification='left', key='matricula')],
-        [sg.InputText("Senha", size=(15, 1), do_not_clear=True, justification='left', key='senha')],
-        [sg.ReadButton('1'), sg.ReadButton('2'), sg.ReadButton('3')],
-        [sg.ReadButton('4'), sg.ReadButton('5'), sg.ReadButton('6')],
-        [sg.ReadButton('7'), sg.ReadButton('8'), sg.ReadButton('9')],
-        [sg.ReadButton('Entrar'), sg.ReadButton('0'), sg.ReadButton('Limpar')]
-    ]
-    login_presidente = [
-        [sg.Text("Controle de Acesso ao CASIN")],
-        [sg.InputText("CPF", size=(15, 1), do_not_clear=True, justification='left',
-                      key='cpf')],
-        [sg.InputText("Senha", size=(15, 1), do_not_clear=True, justification='left',
-                      key='senha')],
-    ]
-    window = sg.Window("Controle de Acesso", default_button_element_size=(5, 2),
-                       auto_size_buttons=False, grab_anywhere=False).Layout(login_principal)
-
-    botoes_matricula = ''
-    botoes_senha = ''
-    while True:
-        button, values = window.Read()
-        if button is None:
-            break
-        if button == 'Limpar':
-            botoes_matricula = ''
-        elif button in '1234567890':
-            botoes_matricula = values['matricula']
-            botoes_matricula += button
-        elif button == 'Entrar':
-            botoes_matricula = values['matricula']
-            ctrl_principal.CtrlPrincipal.login(botoes_matricula)
-
+    def entrar(self):
+        login_principal = [
+            [sg.Text("Controle de Acesso ao CASIN")],
+            [sg.Text('Matricula'),
+             sg.InputText(size=(15, 1), do_not_clear=True, justification='left', key='matricula')],
+            [sg.Text('Matricula'), sg.InputText(size=(15, 1), do_not_clear=True, justification='left', key='senha')],
+            [sg.Submit('Entrar'), sg.ReadButton('0'), sg.ReadButton('Sair')]
+        ]
+        login = sg.Window("Controle de Acesso", default_button_element_size=(5, 2),
+                          auto_size_buttons=False, grab_anywhere=False).Layout(login_principal)
+        event, valor = login.Read()
+        while True:
+            if event is None or valor == 'Sair':
+                 break
+            elif event == 'Entrar' and valor is not None:
+                matricula = valor['matricula']
+                senha = valor['senha']
+                ctrl_principal.CtrlPrincipal.login(CtrlPrincipal, matricula, senha)
