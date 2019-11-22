@@ -1,7 +1,8 @@
+from Entidades.relatorio_acesso import RelatorioAcesso
 from Controladores.ctrl_alunoPresidente import CtrlAlunoPresidente
 from Controladores.ctrl_aluno import Ctrl_aluno
 from Novas_Telas.tela_principal import TelaPrincipal
-from Entidades.relatorio_acesso import RelatorioAcesso
+import sys
 
 
 class CtrlPrincipal:
@@ -24,20 +25,20 @@ class CtrlPrincipal:
                 if matricula and senha in line:
                     # relatorio = RelatorioAcesso(pres.nome, pres.cpf, date.today())
                     # self.__ctrl_presidente.add_relatorio_acesso(relatorio)
-                    self.__ctrl_presidente.abre_menu()
-
-        # for pres in self.__ctrl_presidente.presidentes:
-        #    if pres.matricula == matricula and pres.senha == senha:
-        #        relatorio = RelatorioAcesso(pres.nome, pres.cpf, date.today())
-        #        self.__ctrl_presidente.add_relatorio_acesso(relatorio)
-        #        self.__tela_presidente.menu_principal()
+                    self.__tela_principal.menuescolha(self.__tela_principal)
 
         for aluno in self.__ctrl_aluno.alunos:
             if aluno.matricula == matricula and aluno.senha == senha:
                 relatorio = RelatorioAcesso(aluno.nome, aluno.cpf, aluno.today())
                 self.__ctrl_presidente.add_relatorio_acesso(relatorio)
-                self.__tela_aluno.layout_aluno()
+                self.__ctrl_aluno.tela_aluno()
         return
 
-    def abreTela(self):
-        TelaPrincipal.entrar()
+    def tela_aluno(self):
+        Ctrl_aluno.tela_aluno(self.__ctrl_aluno)
+
+    def tela_presidente(self):
+        CtrlAlunoPresidente.tela_presidente(self.__ctrl_presidente)
+
+    def finalizar(self):
+        sys.exit(0)

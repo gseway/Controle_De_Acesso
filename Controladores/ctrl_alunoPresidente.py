@@ -2,7 +2,6 @@ import sys
 from Entidades.aluno_presidente import AlunoPresidente
 from Novas_Telas.tela_presidente import TelaPresidente
 from Enum.enum_tipoAluno import TipoAluno
-from datetime import date
 from Excecoes.excecao_controlador import *
 from DAO.presidenteDAO import PresidenteDAO
 from Entidades.relatorio_acesso import RelatorioAcesso
@@ -12,9 +11,8 @@ class CtrlAlunoPresidente:
     __instance = None
 
     def __init__(self):
+        presidente_admin = AlunoPresidente("Douglas", "17202184", TipoAluno.ALUNO_PRESIDENTE, "11269734911", "douglasazambuja@hotmail.com", "12345")
         self.__tela_presidente = TelaPresidente
-        presidente_admin = AlunoPresidente("Douglas", "17202184", TipoAluno.ALUNO_PRESIDENTE, "11269734911",
-                                           "douglasazambuja@hotmail.com", "12345")
         self.__presidente_dao = PresidenteDAO()
         self.__presidentes = [presidente_admin]
         self.__relatorios = []
@@ -79,7 +77,6 @@ class CtrlAlunoPresidente:
             print("Não há nenhum presidente com essa matrícula")
 
     def presidente_por_cpf(self, cpf):
-        # abri no modo "r" de read, que vai puxar todas a linhas do arquivo
         with open("presidentes.txt", "r") as infile:
             lines = infile.readlines()
             infile.seek(0)
@@ -91,13 +88,10 @@ class CtrlAlunoPresidente:
 
     def add_relatorio_acesso(self, novo_relatorio: RelatorioAcesso):
         self.__relatorios.append(novo_relatorio)
-        # ao abrir o arquivo com context manager (with), o arquivo se fecha sozinho ao sair do escopo da função, ou seja, não precisa dar close
-        # abrir no modo "a" de append, que vai adicionar no fim do arquivo
         with open("relatorio_acesso.txt", "a") as outfile:
             outfile.write(str(novo_relatorio))
 
     def lista_relatorio_acesso(self):
-        # abrindo arquivo no modo "r" para read
         with open("relatorio_acesso.txt", "r") as infile:
             print(infile.read())
 
@@ -112,5 +106,5 @@ class CtrlAlunoPresidente:
     def relatorios(self):
         return self.__relatorios
 
-    def abre_menu(self):
-        TelaPresidente.layout_menu()
+    def tela_presidente(self):
+        TelaPresidente.menupresidente(self.__tela_presidente)

@@ -1,9 +1,15 @@
 import PySimpleGUI as sg
-from Controladores import ctrl_aluno
-from Controladores import ctrl_alunoPresidente
+from switch import Switch
+from Controladores.ctrl_aluno import Ctrl_aluno
+from Controladores.ctrl_alunoPresidente import CtrlAlunoPresidente
 
 
 class TelaAluno:
+
+    def __init__(self):
+        self.__ctrlAluno = Ctrl_aluno
+        self.__ctrlPresidente = CtrlAlunoPresidente
+
     def menu_aluno(self):
         layout_aluno = [
             [sg.Text("Menu Aluno")],
@@ -13,6 +19,17 @@ class TelaAluno:
         ]
         window = sg.Window("Gerenciar Aluno").Layout(layout_aluno)
         event, valor = window.Read()
+        with Switch(valor) as case:
+            if case('Criar'):
+                self.cadastrar_aluno()
+
+            if case('Editar'):
+                self.cadastrar_aluno()
+            if case('Excluir'):
+                self.cadastrar_aluno()
+            if case('Listar'):
+                self.cadastrar_aluno()
+            # if case.default:
 
     def cadastrar_aluno(self):
         layout_criar = [
@@ -21,10 +38,20 @@ class TelaAluno:
             [sg.Text('Matricula', size=(15, 1)), sg.InputText('', key='matricula', size=(15, 1))],
             [sg.Text('CPF', size=(15, 1)), sg.InputText('', key='cpf', size=(15, 1))],
             [sg.Text('Senha', size=(15, 1)), sg.InputText('', key='senha', size=(15, 1))],
-            [sg.Submit("Cadastrar"), sg.Cancel("Voltar")]
+            [sg.ReadButton("Cadastrar"), sg.ReadButton("Voltar")]
         ]
         window = sg.Window("Gerenciar Aluno").Layout(layout_criar)
         event, valor = window.Read()
+        with Switch(valor) as case:
+            if case('Cadastrar'):
+                nome = valor['nome']
+                matricula = valor['matricula']
+                cpf = valor['cpf']
+                senha = valor['senha']
+                Ctrl_aluno.inclui_aluno(self.__ctrlAluno, nome, matricula, cpf, senha)
+
+            if case('Voltar'):
+                TelaAluno.menu_aluno(self)
 
     def excluir_aluno(self):
         layout_excluir = [

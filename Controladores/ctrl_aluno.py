@@ -3,23 +3,26 @@ from Entidades.aluno_normal import Aluno_normal
 from Enum.enum_tipoAluno import TipoAluno
 from Novas_Telas.tela_aluno import TelaAluno
 from Controladores.ctrl_alunoPresidente import CtrlAlunoPresidente
+from Controladores.ctrl_principal import CtrlPrincipal
 
 
 class Ctrl_aluno:
     __instance = None
     ctrlPresidente = CtrlAlunoPresidente()
+    ctrlPrincipal = CtrlPrincipal
 
     def __init__(self):
         aluno = Aluno_normal("Douglas", "17202185", TipoAluno.ALUNO_PRESIDENTE, "11269734913", "12345")
         self.__alunos = [aluno]
-
+        novo_aluno: Aluno_normal
 
     def __new__(cls):
         if Ctrl_aluno.__instance is None:
             Ctrl_aluno.__instance = object.__new__(cls)
             return Ctrl_aluno.__instance
 
-    def inclui_aluno(self, novo_aluno: Aluno_normal):
+    def inclui_aluno(self, nome: str, matricula: str, cpf: str, senha: str, ):
+        novo_aluno = (nome, matricula, TipoAluno.ALUNO_ALUNO, cpf, senha)
         for aluno in self.__alunos:
             if aluno.matricula == novo_aluno:
                 # se existir um aluno com a mesma matricula, retorna None e para o loop
@@ -66,7 +69,7 @@ class Ctrl_aluno:
         return self.__alunos
 
     def tela_aluno(self):
-        TelaAluno.layout_aluno()
+        TelaAluno.menu_aluno()
 
     def tela_presidente(self):
         CtrlAlunoPresidente.abre_menu()
